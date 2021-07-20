@@ -8,7 +8,7 @@ class CustomersTable extends React.Component {
 
     render () { return (
         this.props ? <React.Fragment>
-            {Object.keys(this.props.customer).length === 0 ? <h2>All Customer Records </h2> : null}
+            {Object.keys(this.props.customer).length > 0 ? <h2>All Customer Records </h2> : null}
         { Object.keys(this.props.customer).map((customerName,i)=> {
           return (
            

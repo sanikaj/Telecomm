@@ -145,13 +145,13 @@ func insertIntoDB(data myData)(int64) {
                         
                         res, err := stmt.ExecContext(ctx, data.phonenumbers, data.name)  
                         if err != nil {  
-                         fmt.Printf("Error Telephone: %s when inserting row into customers table", err)
+                         fmt.Println("Error Telephone: %s when inserting row into customers table", err)
                         }
                         rows, err := res.RowsAffected()  
                         if err != nil {  
-                            fmt.Printf("Error Telephone: %s when finding rows affected", err)
+                            fmt.Println("Error Telephone: %s when finding rows affected", err)
                         }
-                            
+                        fmt.Printf("Rows affected", rows)
                         return id
                     }
                     
