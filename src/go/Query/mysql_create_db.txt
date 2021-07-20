@@ -1,0 +1,22 @@
+/*MYSql DB Script to Create Tables*/
+
+
+/*Create Customers Table*/
+CREATE TABLE db_telecomm.Customers(
+customer_id INT NOT NULL AUTO_INCREMENT,
+full_name VARCHAR(100)  NOT NULL, 
+email VARCHAR(100) NOT NULL,
+create_date DATE,
+PRIMARY KEY(customer_id)
+) ;
+
+/*Create Telephone Table*/
+
+/*With Foreign Key*/
+Create TABLE db_telecomm.Telephone(
+ telephone_id INT NOT NULL AUTO_INCREMENT, 
+ customer_id INT NOT NULL,  
+ phone_number VARCHAR(20), 
+ PRIMARY KEY(telephone_id),
+ FOREIGN KEY (customer_id) REFERENCES  Customers(customer_id)
+);
